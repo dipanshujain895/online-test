@@ -1,0 +1,78 @@
+<%- include("includes/head.ejs") %> 
+<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <main class="container">
+        <div class="row custom-btn">
+            <div class="col-md-6">
+                <button onclick="showForm('f1')" id="b1" class="btn btn-success">Login as student</button>
+            </div>
+            <div class="col-md-6">
+                <button onclick="showForm('f2')" id="b2" class="btn btn-success">Login as teacher</button>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <form action="/student/login" id="f1" method="post" class="form-responsive custom-form"> 
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" placeholder="Enter email" name="email">
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="password">password</label>
+                            <input type="password" class="form-control" placeholder="Enter password" name="password">
+                        </div>
+                        <div class="student-back">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button onclick="hideForm()" id="b3" class="btn btn-warning" type="button">Back</button>
+                        
+                    </div>
+                    </form>
+                </div>
+            </div>
+
+        
+        <div class="row">
+            <div class="col-md-8">
+                <form action="teacher/login" id="f2" method="post" class="form-responsive custom-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" placeholder="Enter email" name="email">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="password">password</label>
+                        <input type="password" class="form-control" placeholder="Enter password" name="password">
+                    </div>
+                    <div class="student-back">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button onclick="hideForm()" id="b4" class="btn btn-warning" type="button">Back</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- <form action="teacher/login" method="post" id=f2>
+            <label for="email">email</label>
+            <input type="text" name="email" />
+
+            <label for="password">password</label>
+            <input type="text" name="password">
+
+            <button type="submit">Login</button>
+        </form>
+    -->
+
+        <!-- <button onclick="hideForm()" id="b3" class="btn btn-warning">Back</button> -->
+
+
+    </main>
+
+    <script src="js/index.js"></script> 
+    <!-- <script src="jquery-3.5.0.min.js"></script> -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+
+<%- include("includes/end.ejs") %> 

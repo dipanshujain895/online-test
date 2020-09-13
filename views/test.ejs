@@ -1,0 +1,65 @@
+<%- include("includes/head.ejs") %>
+<link rel="stylesheet" href="/css/test.css">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <main class="main">
+        <div class="container">
+            <div class="row">
+                <div class="heading-cart col-md-8 ">
+                    <div class="container-fluid">
+        <center>
+            <div class="text-data">
+                <h3>
+                    <b><%= test_title %></b>
+                </h3>
+                <h5>
+                    <%= test_subject %>
+                </h5>
+            </div>
+        </center>
+        </div>
+        </div>
+        </div>
+       
+        <form action="/student/submit-test" method="POST" id="test_form">
+            <input type="hidden" name="test_id" value="<%= test_id %>"> 
+        <% for( let index = 0; index < test_questions.length; index++ ) { %>
+        
+            <div class="row">
+                <div class="cart col-md-8">
+                    <div class="container-fluid">
+
+                        <ul>
+                            <h4><b>Q<%= index+1 %>. <%= test_questions[index].question %> </b></h4>
+
+                            <% test_questions[index].choices.forEach(element => { %>
+                            <li class="li-inpt">
+                                <input type="radio" name="<%= index %>" value="<%= element %>">
+                                <span>&nbsp;&nbsp;<%= element %></span><br>
+                            </li>
+                            <% }) %>
+                            <br>
+                            <br>
+                        </ul>
+                        <input type="hidden" name="<%= index %>-correct" value="<%= test_questions[index].correct %>">
+                    </div>
+                </div>
+            </div>
+        
+        <% } %>
+        
+        <!-- <div class="container"> -->
+        <div class="row custom-btn">
+            <div class="col-md-6 ">
+            <button class="btn btn-success">Submit</button>
+            </div>
+        </div>
+    
+        </form>
+    </div>
+
+    </main>
+    <%- include("includes/end.ejs") %>
