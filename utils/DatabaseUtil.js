@@ -1,7 +1,6 @@
 const mongodb = require('mongodb');
 const MongoClient = mongodb.MongoClient;
 
-const url = "mongodb+srv://dipanshu:96501@cluster0-xhwit.mongodb.net/portal?retryWrites=true&w=majority";
 
 
 let _client;
